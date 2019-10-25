@@ -1,5 +1,8 @@
-﻿using System;
+﻿/// sounds are thanks to http://soundbible.com/2218-Service-Bell-Help.html, http://soundbible.com/2205-Bells-Tibetan-Large.html, http://soundbible.com/2190-Front-Desk-Bell.html, http://soundbible.com/2185-Old-School-Bell.html
+
+using System;
 using System.Threading;
+
 
 namespace ClassBreakClock
 {
@@ -12,6 +15,9 @@ namespace ClassBreakClock
         }
         static void Alarm()
         {
+
+
+
             string morningBreak = "9:30"; string warningMorningBreak = "9:25";
             string lunch = "11:30"; string warningLunch = "11:25";
             string afternoonBreak = "14:15"; string warningAfternoonBreak = "14:10";

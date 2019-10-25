@@ -1,8 +1,34 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="music\bells-tibetan-daniel_simon.wav" />
+    <None Remove="music\front-desk-bells-daniel_simon.wav" />
+    <None Remove="music\old-fashioned-school-bell-daniel_simon.wav" />
+    <None Remove="music\service-bell_daniel_simion.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="music\bells-tibetan-daniel_simon.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="music\front-desk-bells-daniel_simon.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="music\old-fashioned-school-bell-daniel_simon.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="music\service-bell_daniel_simion.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="1.9.0" />
+  </ItemGroup>
 
 </Project>
