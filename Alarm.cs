@@ -45,19 +45,6 @@ namespace ClassBreakAlarmClock
                 watcher(breakTimes, breakSounds, breakColor);
                 watcher(warningTimes, warningSounds, warningColor);
 
-                //foreach (string time in warnings) //warnings
-                //{
-                //    if (buffer.Contains(time))
-                //    {
-                //        Console.ForegroundColor = ConsoleColor.Red;
-                //        Console.WriteLine("Warning!! Five minutes until break time.");
-
-                //        Sounds.MusicPlayer(warningAlarms);
-
-                //        Thread.Sleep(60000);
-                //        Console.Clear();
-                //    }
-                //}
             }
 
 
