@@ -2,7 +2,7 @@
 
 using System;
 using System.Threading;
-
+using System.Collections.Generic;
 
 namespace ClassBreakAlarmClock
 {
@@ -15,15 +15,16 @@ namespace ClassBreakAlarmClock
         }
         static void Alarm()
         {
+        List<string> breakAlarms = new List<string>() { @"music\bells-tibetan-daniel_simon.wav", @"music\old-fashioned-school-bell-daniel_simon.wav" };
+        List<string> warningAlarms = new List<string>() { @"music\front-desk-bells-daniel_simon.wav", @"music\service-bell_daniel_simion.wav" };
 
 
-
-            string morningBreak = "9:30"; string warningMorningBreak = "9:25";
+        string morningBreak = "9:30"; string warningMorningBreak = "9:25";
             string lunch = "11:30"; string warningLunch = "11:25";
             string afternoonBreak = "14:15"; string warningAfternoonBreak = "14:10";
             string endOfDay = "16:00"; string warningEndOfDay = "15:55";
 
-            string test1 = "16:32"; string test2 = "00:00";
+            string test1 = "17:34"; string test2 = "00:00";
 
             string[] breaks = { morningBreak, lunch, afternoonBreak, endOfDay, warningMorningBreak, test1 };
             string[] warnings = { warningMorningBreak, warningLunch, warningAfternoonBreak, warningEndOfDay, warningEndOfDay, test2 };
@@ -43,7 +44,7 @@ namespace ClassBreakAlarmClock
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("It is break time.");
 
-                        Sounds.MusicPlayer();
+                        Sounds.MusicPlayer(breakAlarms);
 
                         Thread.Sleep(60000);
                         Console.Clear();
@@ -56,8 +57,7 @@ namespace ClassBreakAlarmClock
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Warning!! Five minutes until break time.");
 
-                        Console.Beep();
-                        Console.Beep();
+                        Sounds.MusicPlayer(warningAlarms);
 
                         Thread.Sleep(60000);
                         Console.Clear();
