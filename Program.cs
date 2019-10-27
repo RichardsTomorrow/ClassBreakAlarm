@@ -1,11 +1,10 @@
 ﻿/// sounds are thanks to http://soundbible.com/2218-Service-Bell-Help.html, http://soundbible.com/2205-Bells-Tibetan-Large.html, http://soundbible.com/2190-Front-Desk-Bell.html, http://soundbible.com/2185-Old-School-Bell.html
 
-using NAudio.Wave;
 using System;
 using System.Threading;
 
 
-namespace ClassBreakClock
+namespace ClassBreakAlarmClock
 {
     class Program
     {
@@ -24,7 +23,7 @@ namespace ClassBreakClock
             string afternoonBreak = "14:15"; string warningAfternoonBreak = "14:10";
             string endOfDay = "16:00"; string warningEndOfDay = "15:55";
 
-            string test1 = "16:20"; string test2 = "00:00";
+            string test1 = "16:32"; string test2 = "00:00";
 
             string[] breaks = { morningBreak, lunch, afternoonBreak, endOfDay, warningMorningBreak, test1 };
             string[] warnings = { warningMorningBreak, warningLunch, warningAfternoonBreak, warningEndOfDay, warningEndOfDay, test2 };
@@ -44,12 +43,7 @@ namespace ClassBreakClock
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("It is break time.");
 
-                        //Console.Beep();
-                        //Console.Beep();
-                        //Console.Beep();
-                        //Console.Beep();
-                        //StarWars();
-                        MusicPlayer();
+                        Sounds.MusicPlayer();
 
                         Thread.Sleep(60000);
                         Console.Clear();
@@ -73,39 +67,39 @@ namespace ClassBreakClock
 
 
         }
-        public static void MusicPlayer()
-        {
-            using(var audioFile = new AudioFileReader(@"C:\Users\richa\source\repos\ClassBreakAlarm\music\bells-tibetan-daniel_simon.wav"))
-            using(var outputDevice = new WaveOutEvent())
-            {
-                outputDevice.Init(audioFile);
-                outputDevice.Play();
-                while (outputDevice.PlaybackState == PlaybackState.Playing)
-                {
-                 Thread.Sleep(1000);
-                }
-            }
-        }
+        //public static void MusicPlayer()
+        //{
+        //    using(var audioFile = new AudioFileReader(@"music\bells-tibetan-daniel_simon.wav"))
+        //    using(var outputDevice = new WaveOutEvent())
+        //    {
+        //        outputDevice.Init(audioFile);
+        //        outputDevice.Play();
+        //        while (outputDevice.PlaybackState == PlaybackState.Playing)
+        //        {
+        //         Thread.Sleep(1000);
+        //        }
+        //    }
+        //}
 
 
-        public static void StarWars()
-        {
-            Console.Beep(300, 500);
-            Thread.Sleep(50);
-            Console.Beep(300, 500);
-            Thread.Sleep(50);
-            Console.Beep(300, 500);
-            Thread.Sleep(50);
-            Console.Beep(250, 500);
-            Thread.Sleep(50);
-            Console.Beep(350, 250);
-            Console.Beep(300, 500);
-            Thread.Sleep(50);
-            Console.Beep(250, 500);
-            Thread.Sleep(50);
-            Console.Beep(350, 250);
-            Console.Beep(300, 500);
-            Thread.Sleep(50);
-        }
+        //public static void StarWars()
+        //{
+        //    Console.Beep(300, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(300, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(300, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(250, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(350, 250);
+        //    Console.Beep(300, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(250, 500);
+        //    Thread.Sleep(50);
+        //    Console.Beep(350, 250);
+        //    Console.Beep(300, 500);
+        //    Thread.Sleep(50);
+        //}
     }
 }
