@@ -15,19 +15,13 @@ namespace ClassBreakAlarmClock
         }
         static void Alarm()
         {
-        List<string> breakAlarms = new List<string>() { @"music\bells-tibetan-daniel_simon.wav", @"music\old-fashioned-school-bell-daniel_simon.wav" };
-        List<string> warningAlarms = new List<string>() { @"music\front-desk-bells-daniel_simon.wav", @"music\service-bell_daniel_simion.wav" };
+            List<string> breakAlarms = new List<string>() { @"music\bells-tibetan-daniel_simon.wav", @"music\old-fashioned-school-bell-daniel_simon.wav" };
+            List<string> warningAlarms = new List<string>() { @"music\front-desk-bells-daniel_simon.wav", @"music\service-bell_daniel_simion.wav" };
 
+            string breaksTest = "17:34"; string warningsTest = "00:00";
 
-        string morningBreak = "9:30"; string warningMorningBreak = "9:25";
-            string lunch = "11:30"; string warningLunch = "11:25";
-            string afternoonBreak = "14:15"; string warningAfternoonBreak = "14:10";
-            string endOfDay = "16:00"; string warningEndOfDay = "15:55";
-
-            string test1 = "17:34"; string test2 = "00:00";
-
-            string[] breaks = { morningBreak, lunch, afternoonBreak, endOfDay, warningMorningBreak, test1 };
-            string[] warnings = { warningMorningBreak, warningLunch, warningAfternoonBreak, warningEndOfDay, warningEndOfDay, test2 };
+            string[] breaks = { "9:30", "11:30", "14:15", "16:00", breaksTest };
+            string[] warnings = { "9:25", "11:25", "14:10", "15:55", warningsTest };
 
             while (true)
             {
@@ -67,39 +61,5 @@ namespace ClassBreakAlarmClock
 
 
         }
-        //public static void MusicPlayer()
-        //{
-        //    using(var audioFile = new AudioFileReader(@"music\bells-tibetan-daniel_simon.wav"))
-        //    using(var outputDevice = new WaveOutEvent())
-        //    {
-        //        outputDevice.Init(audioFile);
-        //        outputDevice.Play();
-        //        while (outputDevice.PlaybackState == PlaybackState.Playing)
-        //        {
-        //         Thread.Sleep(1000);
-        //        }
-        //    }
-        //}
-
-
-        //public static void StarWars()
-        //{
-        //    Console.Beep(300, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(300, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(300, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(250, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(350, 250);
-        //    Console.Beep(300, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(250, 500);
-        //    Thread.Sleep(50);
-        //    Console.Beep(350, 250);
-        //    Console.Beep(300, 500);
-        //    Thread.Sleep(50);
-        //}
     }
 }
