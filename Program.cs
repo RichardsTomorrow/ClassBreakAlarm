@@ -16,8 +16,8 @@ namespace ClassBreakAlarmClock
             
             string breaksTest = "00:00"; string warningsTest = "00:00";
 
-            List<string> breaks = new List<string>() { "9:30", "11:30", "14:15", "16:00", breaksTest };
-            List<string> warnings =new List<string>() { "9:25", "11:25", "14:10", "15:55", warningsTest };
+            List<string> breaks = new List<string>() { "It is now break time!","9:30", "11:30", "14:15", "16:00", breaksTest };
+            List<string> warnings =new List<string>() { "This is a five minute warning!","9:25", "11:25", "14:10", "15:55", warningsTest };
 
 
             Alarm.alarm(breaks, breakSounds, ConsoleColor.Green ,warnings,warningSounds,ConsoleColor.Red);

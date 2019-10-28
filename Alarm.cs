@@ -22,7 +22,7 @@ namespace ClassBreakAlarmClock
                 if (buffer.Contains(time))
                 {
                     Console.ForegroundColor = color;
-                    Console.WriteLine("It is break time.");
+                    Console.WriteLine(times[0]);
 
                     Sounds.MusicPlayer(sounds);
 
